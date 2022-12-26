@@ -1,0 +1,16 @@
+:host {
+  margin-top: 64px;
+}
+
+.table-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-header {
+  display: flex;
+
+  & img {
+    margin-left: 23px;
+  }
+}

@@ -1,0 +1,39 @@
+:host {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:not(:first-child) {
+    margin-top: 17px;
+  }
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #dadada;
+  transition: all ease-in-out 0.15s;
+
+  &.selected {
+    background-color: #2962ff;
+    border: 0;
+  }
+
+  & img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.value {
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}

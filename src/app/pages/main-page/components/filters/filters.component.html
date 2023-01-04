@@ -1,1 +1,24 @@
-<p>filters works!</p>
+<div class="filters-title">Фильтры</div>
+
+<ng-container [formGroup]="form">
+  <div class="control name">
+    <app-text-control label="Название" formControlName="name">
+    </app-text-control>
+  </div>
+
+  <div class="control stages">
+    <app-select-control
+      label="Стадия"
+      formControlName="stages"
+      [options]="stagesOptions">
+    </app-select-control>
+  </div>
+
+  <div class="control rarity">
+    <h6 class="rarity-title">Редкость</h6>
+    <app-radio-buttons-control
+      formControlName="rarity"
+      [options]="rarityOptions">
+    </app-radio-buttons-control>
+  </div>
+</ng-container>

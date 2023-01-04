@@ -1,16 +1,48 @@
-<div class="table-item">
-  <div class="item-header">
-    <h3 class="item-title">Имя</h3>
-    <img src="assets/icons/arrow.svg" alt="arrow" />
-  </div>
-  <div class="item-body">
-    <div class="item-property">
-      <div class="item-property-name">Редкость</div>
-      <div class="item-property-value"></div>
+<h2 class="table-title">Pokemons</h2>
+
+<div class="table-wrapper">
+  <ng-container *ngIf="(isListLoading$ | async) === false; else skeletonTable">
+    <div class="table-item" *ngFor="let pokemon of list">
+      <div class="item-header">
+        <h3 class="item-title">{{ pokemon.name }}</h3>
+        <img
+          [routerLink]="['/pokemon', pokemon.id]"
+          src="assets/icons/arrow.svg"
+          alt="arrow" />
+      </div>
+      <div class="item-body">
+        <div class="item-property">
+          <div class="item-property-name">Редкость</div>
+          <div class="item-property-value">{{ pokemon.rarity }}</div>
+        </div>
+        <div class="item-property">
+          <div class="item-property-name">Стадия</div>
+          <div class="item-property-value">{{ pokemon.stage }}</div>
+        </div>
+      </div>
     </div>
-    <div class="item-property">
-      <div class="item-property-name">Типы</div>
-      <div class="item-property-value"></div>
-    </div>
-  </div>
+  </ng-container>
 </div>
+
+<div class="table-pagination">
+  <img
+    src="assets/icons/pagination-arrow.svg"
+    alt="left arrow"
+    class="left-arrow"
+    [class.active]="isLeftArrowActive"
+    (click)="changePage(-1)" />
+  <div class="page">{{ currentPage }}</div>
+  <img
+    src="assets/icons/pagination-arrow.svg"
+    alt="right arrow"
+    class="right-arrow active"
+    [class.active]="isRightArrowActive"
+    (click)="changePage(1)" />
+</div>
+
+<ng-template #skeletonTable>
+  <div class="table-item" *ngFor="let item of mockListForSkeleton">
+    <div class="item-header skeleton"></div>
+    <div class="item-body skeleton"></div>
+  </div>
+</ng-template>

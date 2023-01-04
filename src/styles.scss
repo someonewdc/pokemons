@@ -1,6 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~normalize.css';
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 html {
   font-family: 'Roboto', sans-serif;
+  background-color: #fafafa;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1920px;
+  height: 100%;
+  padding: 0 60px;
+  margin: auto;
 }

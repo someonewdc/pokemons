@@ -1,0 +1,85 @@
+:host {
+  display: block;
+  padding-top: 48px;
+}
+
+button {
+  display: flex;
+  width: 85px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  color: #2962ff;
+  padding: 0;
+
+  & img {
+    height: 10px;
+    width: 10px;
+    transform: rotate(180deg);
+  }
+
+  & span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.card-title {
+  margin-top: 22px;
+  font-weight: 500;
+  font-size: 28px;
+}
+
+.properties-wrapper {
+  margin-top: 53px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 250px;
+  width: 800px;
+}
+
+.property-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 275px;
+}
+
+.property-value {
+  color: #2962ff;
+}
+
+.skeleton {
+  animation: skeleton-loading 0.5s linear infinite alternate;
+  height: 25px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.card-title.skeleton {
+  width: 10%;
+}
+//.item-header.skeleton {
+//  width: 15%;
+//}
+//
+//.item-body.skeleton {
+//  width: 60%;
+//}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #ccd1d3;
+  }
+  100% {
+    background-color: #f0f3f5;
+  }
+}
+
+h2 {
+  margin: 0;
+}

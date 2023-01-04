@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  & > .button-wrapper:not(:first-child) {
+    margin-top: 17px;
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+label {
+  margin-left: 28px;
+  font-weight: 400;
+  font-size: 16px;
+}

@@ -1,0 +1,10 @@
+<div class="button-wrapper" *ngFor="let option of options; let i = index">
+  <input
+    type="radio"
+    [id]="i"
+    [value]="option"
+    name="option"
+    [checked]="option === value"
+    (click)="selectButton(option)" />
+  <label [for]="i">{{ option }}</label>
+</div>

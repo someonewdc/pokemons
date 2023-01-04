@@ -1,0 +1,31 @@
+:host {
+  height: 100%;
+  width: 20%;
+  padding: 52px 33px 0;
+  background-color: #ffffff;
+  border-left: 1px solid #a5a5a5;
+}
+
+.filters-title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.control {
+  margin-top: 48px;
+}
+
+.rarity-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+app-radio-buttons-control {
+  margin-top: 20px;
+}
+
+h6 {
+  margin: 0;
+  padding: 0;
+}

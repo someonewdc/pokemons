@@ -1,0 +1,53 @@
+:host {
+  position: relative;
+}
+
+.preview {
+  cursor: pointer;
+  height: 25px;
+  border: 0;
+  position: relative;
+  outline: none;
+  padding: 0 0 3px 0;
+  border-bottom: 1px solid #b3b3b3;
+
+  &.active {
+    border-bottom: 1px solid #347cff;
+
+    & > .preview-label {
+      font-size: 14px;
+      line-height: 16px;
+      bottom: 25px;
+      left: 0;
+    }
+  }
+}
+
+.values {
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.preview-label {
+  position: absolute;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #999999;
+  bottom: 4px;
+  left: 1px;
+  transition: all ease-in-out 0.1s;
+}
+
+.options-wrapper {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 17px;
+  width: 100%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23), 0 3px 6px rgba(0, 0, 0, 0.16);
+  top: 26px;
+  left: 0;
+}

@@ -8,7 +8,8 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "changeDetection": "OnPush"
+          "changeDetection": "OnPush",
+          "standalone": true
         }
       },
       "root": "",
@@ -18,7 +19,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test-task",
+            "outputPath": "dist/pokemons",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -59,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "testTask:build:production"
+              "browserTarget": "pokemons:build:production"
             },
             "development": {
-              "browserTarget": "testTask:build:development"
+              "browserTarget": "pokemons:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -70,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "testTask:build"
+            "browserTarget": "pokemons:build"
           }
         },
         "test": {

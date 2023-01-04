@@ -1,0 +1,18 @@
+<div
+  class="preview"
+  [class.active]="value.length"
+  (click)="isOptionsOpen = !isOptionsOpen">
+  <span class="values" [title]="value | displayList">{{ value | displayList }}</span>
+  <span class="preview-label">{{ label }}</span>
+</div>
+<div
+  class="options-wrapper"
+  *ngIf="isOptionsOpen"
+  [@optionsInOut]="isOptionsOpen">
+  <app-select-option
+    *ngFor="let option of options"
+    (selectionChange)="selectOption($event)"
+    [isOptionSelected]="option | isValueInList : value"
+    [option]="option">
+  </app-select-option>
+</div>

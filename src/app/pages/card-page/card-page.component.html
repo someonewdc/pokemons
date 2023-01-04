@@ -1,1 +1,38 @@
-<p>card-page works!</p>
+<div class="container">
+  <button class="back-button" routerLink="/home">
+    <img src="assets/icons/arrow.svg" alt="" class="back-arrow" />
+    <span class="back-text">Вернуться</span>
+  </button>
+  <ng-container *ngIf="pokemon$ | async as pokemon; else skeletonCard">
+    <h2 class="card-title">{{ pokemon.name }}</h2>
+    <div class="properties-wrapper">
+      <div class="property-block">
+        <div class="property-name">Редкость</div>
+        <div class="property-value">{{ pokemon.rarity }}</div>
+      </div>
+      <div class="property-block">
+        <div class="property-name">Стадия</div>
+        <div class="property-value">{{ pokemon.stage }}</div>
+      </div>
+      <div class="property-block">
+        <div class="property-name">Здоровье</div>
+        <div class="property-value">{{ pokemon.hp }}</div>
+      </div>
+      <div class="property-block">
+        <div class="property-name">Описание</div>
+        <div class="property-value">
+          {{ pokemon.description ?? '-' }}
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #skeletonCard>
+  <div class="card-title skeleton"></div>
+  <div class="properties-wrapper">
+    <div
+      *ngFor="let _ of mockPropertiesCount"
+      class="property-block skeleton"></div>
+  </div>
+</ng-template>

@@ -1,0 +1,36 @@
+input {
+  height: 25px;
+  width: 100%;
+  border: 0;
+  outline: none;
+  padding: 0 0 3px 0;
+  border-bottom: 1px solid #b3b3b3;
+
+  &:focus {
+    border-bottom: 1px solid #347cff;
+    caret-color: #347cff;
+  }
+
+  & + label:not(.empty) {
+    font-size: 14px;
+    line-height: 16px;
+    bottom: 25px;
+    left: 0;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+label {
+  pointer-events: none;
+  position: absolute;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #999999;
+  bottom: 4px;
+  left: 1px;
+  transition: all ease-in-out 0.15s;
+}

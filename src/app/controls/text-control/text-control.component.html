@@ -1,0 +1,10 @@
+<div class="input-wrapper">
+  <input
+    type="text"
+    id="textControl"
+    [value]="value"
+    (input)="inputChange($event)" />
+  <label for="textControl" [class.empty]="!value">
+    <span>{{ label }}</span>
+  </label>
+</div>

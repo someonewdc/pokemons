@@ -2,7 +2,9 @@
   class="preview"
   [class.active]="value.length"
   (click)="isOptionsOpen = !isOptionsOpen">
-  <span class="values" [title]="value | displayList">{{ value | displayList }}</span>
+  <span class="values" [title]="value | displayList">{{
+    value | displayList
+  }}</span>
   <span class="preview-label">{{ label }}</span>
 </div>
 <div

@@ -10,8 +10,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SelectOptionComponent } from '@app/controls/select-option/select-option.component';
-import { IsValueInListPipe } from '@app/shared/pipes';
-import { DisplayListPipe } from '@app/shared/pipes/display-list.pipe';
+import { IsValueInListPipe, DisplayListPipe } from '@app/shared/pipes';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({

@@ -2,9 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { PokemonDetail } from '@app/pages/card-page/card-page.models';
-import { CardPageFacadeService } from '@app/pages/card-page/services/card-page-facade.service';
+import {
+  CardPageFacadeService,
+  CardPageApiService,
+} from '@app/pages/card-page/services';
 import { CommonModule } from '@angular/common';
-import { CardPageApiService } from '@app/pages/card-page/services/card-page-api.service';
 
 @Component({
   selector: 'app-card-page',

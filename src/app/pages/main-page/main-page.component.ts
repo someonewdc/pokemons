@@ -7,7 +7,7 @@ import {
   MainPageFacadeService,
   MainPageApiService,
 } from '@app/pages/main-page/services';
-import { map, Observable, switchMap, tap } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 import { PokemonTable } from '@app/pages/main-page/main-page.models';
 import { CommonModule } from '@angular/common';
 
@@ -25,7 +25,6 @@ export class MainPageComponent {
 
   constructor(private facade: MainPageFacadeService) {
     this.list$ = this.facade.filtersWithPage$.pipe(
-      tap(data => console.log(data)),
       switchMap(({ page, ...filters }) =>
         this.facade.fetchCards$(page, filters)
       ),

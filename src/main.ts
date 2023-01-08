@@ -1,7 +1,15 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { provideHttpClient } from '@angular/common/http';
+import { importProvidersFrom } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
+import { AppComponent } from '@app/app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { APP_ROUTES } from '@app/routes';
 
-import { AppModule } from '@app/app.module';
-
-platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(APP_ROUTES),
+    provideHttpClient(),
+    importProvidersFrom([BrowserAnimationsModule]),
+  ],
+}).catch(err => console.error(err));

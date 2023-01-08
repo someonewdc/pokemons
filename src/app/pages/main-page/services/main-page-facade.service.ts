@@ -4,6 +4,7 @@ import { MainPageApiService } from '@app/pages/main-page/services/main-page-api.
 import { Filters } from '@app/pages/main-page/main-page.models';
 import { createGetCardsQuery } from '@app/pages/main-page/main-page.queries';
 import { delay, distinctUntilChanged, map, tap } from 'rxjs';
+import { LoaderFields } from '@app/shared/types';
 
 @Injectable()
 export class MainPageFacadeService {
@@ -11,11 +12,11 @@ export class MainPageFacadeService {
   private api = inject(MainPageApiService);
 
   public fetchCards$(page: number, filters: Filters) {
-    this.store.isListLoading.setValue(true);
+    this.setLoader('isListLoading');
     const query = createGetCardsQuery(page, filters);
     return this.api.getCards$(query).pipe(
       delay(300),
-      tap(() => this.store.isListLoading.setValue(false))
+      tap(() => this.removeLoader('isListLoading'))
     );
   }
 
@@ -73,5 +74,13 @@ export class MainPageFacadeService {
 
   public get isListLoading() {
     return this.store.isListLoading.getValue();
+  }
+
+  private setLoader(loaderName: LoaderFields<MainPageStoreService>) {
+    this.store[loaderName].setValue(true);
+  }
+
+  private removeLoader(loaderName: LoaderFields<MainPageStoreService>) {
+    this.store[loaderName].setValue(false);
   }
 }

@@ -4,6 +4,7 @@ import { MainPageFacadeService } from '@app/pages/main-page/services/main-page-f
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { RouterLink } from '@angular/router';
+import { MAX_TABLE_SIZE } from '@app/pages/main-page/components/table/table.constants';
 
 @Component({
   selector: 'app-table',
@@ -14,7 +15,7 @@ import { RouterLink } from '@angular/router';
   imports: [CommonModule, RouterLink],
 })
 export class TableComponent {
-  public readonly mockListForSkeleton = Array.from({ length: 5 });
+  public readonly mockListForSkeleton = Array.from({ length: MAX_TABLE_SIZE });
 
   public isListLoading$: Observable<boolean>;
 
@@ -33,7 +34,6 @@ export class TableComponent {
   }
 
   public get isRightArrowActive() {
-    const MAX_TABLE_SIZE = 5;
     return this.list?.length === MAX_TABLE_SIZE && !this.facade.isListLoading;
   }
 

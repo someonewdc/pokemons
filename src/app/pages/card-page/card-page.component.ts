@@ -7,6 +7,7 @@ import {
   CardPageApiService,
 } from '@app/pages/card-page/services';
 import { CommonModule } from '@angular/common';
+import { PROPERTIES_COUNT } from '@app/pages/card-page/card-page.constants';
 
 @Component({
   selector: 'app-card-page',
@@ -20,7 +21,9 @@ import { CommonModule } from '@angular/common';
 export class CardPageComponent {
   public pokemon$: Observable<PokemonDetail>;
 
-  public readonly mockPropertiesCount = Array.from({ length: 4 });
+  public readonly mockPropertiesCount = Array.from({
+    length: PROPERTIES_COUNT,
+  });
 
   constructor(
     private route: ActivatedRoute,

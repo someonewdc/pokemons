@@ -1,3 +1,8 @@
+:host {
+  display: block;
+  position: relative;
+}
+
 input {
   height: 25px;
   width: 100%;
@@ -17,10 +22,6 @@ input {
     bottom: 25px;
     left: 0;
   }
-}
-
-.input-wrapper {
-  position: relative;
 }
 
 label {

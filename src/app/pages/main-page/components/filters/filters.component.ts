@@ -15,11 +15,11 @@ import {
   takeUntil,
 } from 'rxjs';
 import { MainPageFacadeService } from '@app/pages/main-page/services';
-import { DestroyService } from '@app/shared/utils';
 import {
   RARITY_OPTIONS,
   STAGES_OPTIONS,
 } from '@app/pages/main-page/components/filters/filters.constants';
+import { DestroyService } from '@app/shared/services';
 
 @Component({
   selector: 'app-filters',

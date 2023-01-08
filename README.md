@@ -1,6 +1,6 @@
 # Pokemons app
 
-Simple pokemons app. It contains table with pagination and filtering and detailed card page. It was a test task so I decided to test here some new Angular features and GraphQL. 
+Simple pokemons app. It contains table with pagination and filtering and detailed card page. It was a test task so I decided to test here some new Angular features and GraphQL.
 
 Unfortunately, the last Angular version isn't comparable to any of apollo-client versions so I couldn't try it out. But maybe in future I will be able to.
 

@@ -6,7 +6,7 @@ Unfortunately, the last Angular version isn't comparable to any of apollo-client
 
 There is a lot of things to improve still and if I'll have time and wish I will fix it.
 
-Link to live site: https://pokemons-app.onrender.com/home
+Link to live site: https://pokemons-app.onrender.com
 
 ## Development server
 
